@@ -1,7 +1,7 @@
 /venv
+local-cdn/
+system/static_files/vendors
 
-# ignore vendor files
-.\system\staticfiles\vendors
 
 
 # Byte-compiled / optimized / DLL files

@@ -13,7 +13,8 @@ from decouple import config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 
@@ -26,7 +27,7 @@ SECRET_KEY = config("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DJANGO_DEBUG", cast= bool)
 
-print("DEBUG", DEBUG, type(DEBUG))
+print("DEBUG", DEBUG, type(DEBUG), BASE_DIR)
 
 ALLOWED_HOSTS = [
     ".railway.app" #https://saas.prod.railways.app 
@@ -129,6 +130,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_BASE_DIR = BASE_DIR / "static_files"
+STATICFILES_VENDOR_DIR = STATICFILES_BASE_DIR / "vendors"
+
+# source(s) ofr python manage.py collectstatics
+
+STATICFILES_DIRS = [
+    STATICFILES_BASE_DIR
+]
+ 
+#output for python manage.py collectstatic
+#local cdn
+
+STATIC_ROOT = BASE_DIR.parent / "local-cdn"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
