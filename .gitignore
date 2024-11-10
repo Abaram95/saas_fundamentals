@@ -1,5 +1,9 @@
 /venv
 
+# ignore vendor files
+.\system\staticfiles\vendors
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

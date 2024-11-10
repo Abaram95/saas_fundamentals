@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>SAAS</title>
+        {% include 'base/css.html' %}
+    </head>
     <body>
+        {% include 'nav/navbar.html' %}
+        {% block content %}
         <h1> Hello world !!</h1>
         <p>{{request.method}}</p>
         <p>{{queryset}}</p>
         <p>visitas na pagina {{ page_count }}</p>
+        {% endblock %}
+        
+        {% include 'base/js.html' %}
+    
     </body>
     
 </html>
