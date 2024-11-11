@@ -3,6 +3,13 @@
 ARG PYTHON_VERSION=3.12-slim-bullseye
 FROM python:${PYTHON_VERSION}
 
+ARG DJANGO_SECRET_KEY
+ENV DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+
+ARG DJANGO_DEBUG=0
+ENV DJANGO_DEBUG=${DJANGO_DEBUG}
+
+
 # Create a virtual environment
 RUN python -m venv /opt/venv
 
