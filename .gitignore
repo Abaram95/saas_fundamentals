@@ -1,6 +1,6 @@
 /venv
 local-cdn/
-system/static_files/vendors
+system/staticfiles/vendors
 
 
 
