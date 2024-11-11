@@ -27,7 +27,7 @@ SECRET_KEY = config("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DJANGO_DEBUG", cast= bool)
 
-print("DEBUG", DEBUG, type(DEBUG), BASE_DIR)
+
 
 ALLOWED_HOSTS = [
     ".railway.app" #https://saas.prod.railways.app 
@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #my-apps
-    'visits'
+    'visits',
+    'commando'
 ]
 
 MIDDLEWARE = [
@@ -131,6 +132,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_BASE_DIR = BASE_DIR / "static_files"
+STATICFILES_BASE_DIR.mkdir(exist_ok=True, parents=True)
 STATICFILES_VENDOR_DIR = STATICFILES_BASE_DIR / "vendors"
 
 # source(s) ofr python manage.py collectstatics
