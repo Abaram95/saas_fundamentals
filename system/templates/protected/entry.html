@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SAAS</title>
+        {% include 'base/css.html' %}
+    </head>
+    <body>
+        {% include 'nav/navbar.html' %}
+        {% block content %}
+        <h1>Enter Code</h1>
+
+        <form method="post">{% csrf_token %}
+            <input type="password" name="code" placeholder="Enter d Code">
+            <button type="submit">Submit</button>
+        </form>
+
+
+        {% endblock %}
+        
+        {% include 'base/js.html' %}
+    
+    </body>
+    
+</html>

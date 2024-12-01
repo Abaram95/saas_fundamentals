@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{% crsf token %}
+
+<form method="POST" action="/login/">
+    <input type="text" name="user" placeholder="Username">
+    <input type="text" name="user" placeholder="Password">
+</form>
+
+
+{% end block %}
